@@ -7,47 +7,42 @@
 <title>Portfolio JAZ</title>
 
 <style>
-/* Osnovni reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-    background-color: #f8f4ec;
-    color: #333;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
+    color: #333;
+    background-color: #f8f4ec;
 }
 
-/* HEADER HERO */
+/* HERO SECTION */
 header {
     width: 100%;
     height: 100vh;
     background-image: url('jazcode.jpg');
     background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    padding-bottom: 100px;
 }
 
 header .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #fff;
     text-align: center;
-    padding: 20px;
 }
 
 header .hero-text h1 {
     font-size: 48px;
-    font-weight: bold;
+    margin: 0 0 20px;
 }
 
 header .hero-text p {
     font-size: 20px;
-    margin-top: 10px;
 }
 
 /* NAV */
@@ -71,7 +66,7 @@ nav a:hover {
     color: #7b5e57;
 }
 
-/* SEKCIJE */
+/* SECTION COMMON */
 section {
     padding: 60px 20px;
     max-width: 1000px;
@@ -167,56 +162,88 @@ footer {
     border-top: 2px solid #d4b48f;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px){
-
-    /* HEADER HERO ZA MOBILNI */
+/* RESPONSIVE TABLET */
+@media (max-width: 1024px) {
     header {
         height: auto;
-        padding: 60px 20px;
+        padding: 80px 20px;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
+    header .hero-text {
+        position: static;
+        transform: none;
+        padding: 10px 0;
+    }
+
     header .hero-text h1 {
-        font-size: 32px;
+        font-size: 36px;
+    }
+
+    header .hero-text p {
+        font-size: 18px;
+    }
+
+    #o-meni {
+        gap: 20px;
+    }
+
+    #usluge .cards-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* RESPONSIVE TELEFON */
+@media (max-width: 768px){
+    header {
+        height: auto;
+        padding: 60px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header .hero-text {
+        position: static;
+        transform: none;
+        padding: 5px 0;
+    }
+
+    header .hero-text h1 {
+        font-size: 28px;
     }
 
     header .hero-text p {
         font-size: 16px;
     }
 
-    /* O MENI */
     #o-meni {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
     }
 
     #o-meni img {
-        max-width: 80%;
         margin: 0 auto;
+        max-width: 80%;
     }
 
     #o-meni .bio {
-        flex: unset;
-        width: 90%;
-        text-align: center;
-        margin: 0 auto;
+        flex: 1 1 100%;
     }
 
-    /* KARTICE USLUGE */
     #usluge .cards-wrapper {
         grid-template-columns: 1fr;
     }
 
-    /* FOOTER */
-    footer {
-        font-size: 12px;
-        padding: 15px;
+    .service-card {
+        width: 90%;
     }
 }
-
 </style>
 
 </head>
@@ -287,5 +314,6 @@ I dok digitalni svet izgleda logično i hladno, ja verujem u tajne koje svaka st
 
 </body>
 </html>
+
 
 
