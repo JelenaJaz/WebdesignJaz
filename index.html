@@ -18,17 +18,18 @@ body {
 }
 /* HERO SECTION */
 header {
-    width: calc(100% - 20px); /* levo/desno ostaje */
-    height: 35vh; /* desktop visina */
-    margin: 0 auto; /* samo vertikalno uklonjen višak */
+    width: calc(100% - 20px); /* levo i desno netaknuto */
+    height: auto; /* visina prati sadržaj */
+    margin: 5px 5px 20px; /* zadržavamo tvoje margine */
     border-radius: 15px;
     background-image: url('jazcode.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
     display: flex;
-    align-items: center; /* centriramo tekst vertikalno */
-    justify-content: center;
+    align-items: center; /* centriranje vertikalno */
+    justify-content: center; /* centriranje horizontalno */
+    padding: 10px 0; /* SMANJEN vertikalni padding */
 }
 
 /* Tekst u centru */
@@ -49,13 +50,12 @@ header .hero-text p {
     text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
 }
 
-/* MOBILE PRILAGOĐAVANJE */
+/* Mobile adjustments */
 @media (max-width: 768px) {
     header {
-        height: 22vh; /* slika zauzima manje visine */
+        padding: 5px 0; /* još manji vertikalni prostor na mobilnom */
     }
 }
-
 
 /* NAV */
 nav {
@@ -306,6 +306,7 @@ I dok digitalni svet izgleda logično i hladno, ja verujem u tajne koje svaka st
 
 </body>
 </html>
+
 
 
 
