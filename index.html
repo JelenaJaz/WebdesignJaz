@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio JAZ</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    color: #333;
+    background-color: #f8f4ec;
+}
+
+/* HERO SECTION */
+header {
+    width: 100%;
+    height: 100vh; /* umesto 100vh */
+    background-image: url('jazcode.jpg');
+    background-size: cover;
+    background-position: center; /* centar i dalje */
+	padding-bottom: 100px; /* "izvuče" donji deo da se vidi */
+}
+
+header .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+header .hero-text h1 {
+    font-size: 48px;
+    margin: 0 0 20px;
+}
+
+header .hero-text p {
+    font-size: 20px;
+}
+
+/* NAV */
+nav {
+    text-align: center;
+    background: rgba(245,240,230,0.9);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #5c4033;
+}
+
+nav a:hover {
+    color: #7b5e57;
+}
+
+/* SECTION COMMON */
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #fff8f0;
+    border-radius: 20px;
+    border: 2px solid #d4b48f; /* bakar/beige okvir */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* O MENI */
+#o-meni {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+#o-meni img {
+    flex: 1 1 300px;
+    max-width: 300px;
+    border-radius: 12px;
+}
+
+#o-meni .bio {
+    flex: 2 1 500px;
+}
+
+/* USLUGE KARTICE */
+#usluge .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center; /* centriranje kartica */
+}
+
+.service-card {
+    background: #f5e9d6; /* tvoja beige/nude boja */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 280px;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    line-height: 1.5;
+}
+
+/* KONTAKT */
+#kontakt {
+    text-align: center;
+}
+
+#kontakt a {
+    color:#5c4033; 
+    text-decoration:none;
+}
+
+#kontakt a:hover {
+    color: #7b5e57;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f5f0e6;
+    color: #5c4033;
+    font-size: 14px;
+    border-top: 2px solid #d4b48f;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+    #o-meni {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #o-meni img {
+        margin: 0 auto;
+    }
+
+    #usluge .cards-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="hero-text">
+        <h1>JAZ - Web Designer</h1>
+        <p>TVOJ SAJT - TVOJA PRICA</p>
+    </div>
+</header>
+
+<nav>
+    <a href="#o-meni">O meni</a>
+    <a href="#usluge">Usluge</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
+
+<section id="o-meni">
+    <img src="jazlogo.jpg" alt="JAZ Profile">
+    <div class="bio">
+        <h2>O meni/About me</h2>
+        <p>Zdravo! Ja sam Jelena – kreatorka digitalnih svetova i graditelj brend identiteta koji ostavlja neizbrisiv trag. Moj rad nije samo web dizajn; to je umetnost pričanja priče kroz piksele i boje, spoj estetike, funkcionalnosti i psihologije korisničkog iskustva.
+
+Verujem da svaki sajt nosi energiju svog kreatora i klijenta – i da je dizajn moćno oruđe koje oblikuje percepciju, izaziva emocije i inspiriše akciju. Svaka linija, svaka boja i svaki element imaju duboko promišljen razlog – jer pravi digitalni utisak se ne stvara slučajno.
+
+Moj stil je spoj minimalizma, sofisticiranosti i psihološke dubine – sajtovi koje kreiram nisu samo lepi, već imaju snagu da privuku, zadrže i osvoje pažnju. Kada uđete u moj svet dizajna, ulazite u prostor gde ideja postaje iskustvo, a vizuelna priča pokreće ljude.
+
+I dok digitalni svet izgleda logično i hladno, ja verujem u tajne koje svaka stranica može da ispriča, u emocije koje dizajn može da probudi i u snagu koju online prisustvo nosi. Dobrodošli na moj portfolio – ovde počinje vaša priča, oblikovana snagom, estetikom i misterijom.</p>
+    </div>
+</section>
+
+<section id="usluge">
+    <h2>Usluge/Services</h2>
+    <div class="cards-wrapper">
+        <div class="service-card">
+            <h3>Web dizajn</h3>
+            <p>Linije koda nisu samo tehnika — one nose tvoj identitet.<br>Boje, slike i struktura postaju psihologija tvog brenda.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Online prodavnice</h3>
+            <p>Tvoja prodavnica, tvoj identitet.<br>Sistem koji radi za tebe, jednostavan za upravljanje i dizajniran da proda.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Portfolio sajtovi</h3>
+            <p>Portfolio sajt koji pretvara tvoju kreativnost u digitalni brend.<br>Jedinstveno, profesionalno, tvoje ime na mreži.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Logo dizajn</h3>
+            <p>Tvoja ideja, tvoj stil, tvoj logo.<br>Pretvaram kreativnost u vizuelni identitet koji pamti svet.</p>
+        </div>
+    </div>
+</section>
+
+<section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Email: <a href="mailto:jelenabogoeski23@gmail.com">jelenabogoeski23@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/webdesign_jaz" target="_blank">@webdesign_jaz</a></p>
+</section>
+
+<footer>
+    &copy; 2025 JAZ | Designed by Jelena Bogoeski | All rights reserved
+</footer>
+
+</body>
+</html>
