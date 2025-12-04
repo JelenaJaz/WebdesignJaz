@@ -19,8 +19,8 @@ body {
 /* HERO SECTION */
 header {
     width: 100%;
-    min-height: 35vh; /* desktop minimalna visina */
-    margin: 5px 0 20px;
+    height: auto; /* automatska visina prema sadržaju */
+    margin: 5px 0 20px; /* gornja i donja margina */
     border-radius: 15px;
     background-image: url('jazcode.jpg');
     background-size: cover;
@@ -29,7 +29,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 15px; /* da tekst ne bude do ivice */
+    padding: 20px 15px; /* vertikalni i horizontalni padding */
 }
 
 /* Tekst u centru */
@@ -53,11 +53,10 @@ header .hero-text p {
 /* Mobile adjustments */
 @media (max-width: 768px) {
     header {
-        min-height: 50vh; /* viša sekcija na mobilnom za lep izgled */
-        padding: 0 10px;
+        padding: 10px 15px; /* manje vertikalnog prostora na mobilnom */
+        border-radius: 10px;
     }
 }
-
 
 /* NAV */
 nav {
@@ -308,6 +307,7 @@ I dok digitalni svet izgleda logično i hladno, ja verujem u tajne koje svaka st
 
 </body>
 </html>
+
 
 
 
