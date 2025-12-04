@@ -92,22 +92,23 @@ section h2 {
 }
 
 #o-meni img {
-    flex: 1 1 auto;
-    max-width: 300px;
     width: 100%;
-    height: auto; /* očuva proporcije slike */
+    max-width: 350px; /* VEĆA širina */
+    height: auto;
     border-radius: 12px;
-    object-fit: contain; /* slika se ne deformiše */
+    object-fit: cover; /* lepše popunjava prostor */
 }
 
 /* MOBILNI */
 @media (max-width: 480px) {
     #o-meni img {
-        max-width: 200px;
-        width: 80%; /* skaluje proporcionalno ekranu */
+        max-width: 260px;  /* povećano! */
+        width: 90%;        /* zauzima više širine */
         height: auto;
+        object-fit: cover; /* da ne bude jajasto */
         margin: 0 auto;
     }
+}
 
 /* USLUGE KARTICE */
 #usluge .cards-wrapper {
@@ -295,4 +296,5 @@ I dok digitalni svet izgleda logično i hladno, ja verujem u tajne koje svaka st
 
 </body>
 </html>
+
 
