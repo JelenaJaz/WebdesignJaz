@@ -23,8 +23,9 @@ header {
     height: 100vh;
     background-image: url('jazcode.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     padding-bottom: 100px;
+    position: relative;
 }
 
 header .hero-text {
@@ -100,6 +101,9 @@ section h2 {
 #o-meni img {
     flex: 1 1 300px;
     max-width: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* logo proporcionalno */
     border-radius: 12px;
 }
 
@@ -162,55 +166,25 @@ footer {
     border-top: 2px solid #d4b48f;
 }
 
-/* RESPONSIVE TABLET */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-    header {
-        height: auto;
-        padding: 80px 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    header .hero-text {
-        position: static;
-        transform: none;
-        padding: 10px 0;
-    }
-
-    header .hero-text h1 {
-        font-size: 36px;
-    }
-
-    header .hero-text p {
-        font-size: 18px;
-    }
-
     #o-meni {
-        gap: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #o-meni img {
+        margin: 0 auto;
     }
 
     #usluge .cards-wrapper {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 }
 
-/* RESPONSIVE TELEFON */
 @media (max-width: 768px){
     header {
-        height: auto;
-        padding: 60px 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    header .hero-text {
-        position: static;
-        transform: none;
-        padding: 5px 0;
+        height: 60vh; /* manje prostora na telefonu */
     }
 
     header .hero-text h1 {
@@ -221,30 +195,12 @@ footer {
         font-size: 16px;
     }
 
-    #o-meni {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    #o-meni img {
-        margin: 0 auto;
-        max-width: 80%;
-    }
-
     #o-meni .bio {
-        flex: 1 1 100%;
-    }
-
-    #usluge .cards-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .service-card {
-        width: 90%;
+        text-align: center;
     }
 }
 </style>
+
 
 </head>
 
@@ -314,6 +270,7 @@ I dok digitalni svet izgleda logično i hladno, ja verujem u tajne koje svaka st
 
 </body>
 </html>
+
 
 
 
