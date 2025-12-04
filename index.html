@@ -23,9 +23,9 @@ header {
     height: 100vh;
     background-image: url('jazcode.jpg');
     background-size: cover;
-    background-position: center center;
-    padding-bottom: 100px;
+    background-position: center center; /* centriranje horizontalno i vertikalno */
     position: relative;
+    padding: 0;
 }
 
 header .hero-text {
@@ -35,6 +35,7 @@ header .hero-text {
     transform: translate(-50%, -50%);
     color: #fff;
     text-align: center;
+    padding: 0 10px; /* sprečava da ide do ivica na telefonu */
 }
 
 header .hero-text h1 {
@@ -96,15 +97,18 @@ section h2 {
     flex-wrap: wrap;
     align-items: center;
     gap: 30px;
+    padding: 20px; /* poboljšava vidljivost okvira */
+    justify-content: center; /* centrira sadržaj */
 }
 
 #o-meni img {
-    flex: 1 1 300px;
-    max-width: 300px;
     width: 100%;
+    max-width: 300px;
     height: auto;
-    object-fit: contain; /* logo proporcionalno */
+    object-fit: contain; /* logo pravilnih proporcija */
     border-radius: 12px;
+    display: block;
+    margin: 0 auto;
 }
 
 #o-meni .bio {
@@ -167,24 +171,10 @@ footer {
 }
 
 /* RESPONSIVE */
-@media (max-width: 1024px) {
-    #o-meni {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    #o-meni img {
-        margin: 0 auto;
-    }
-
-    #usluge .cards-wrapper {
-        grid-template-columns: 1fr;
-    }
-}
-
 @media (max-width: 768px){
     header {
-        height: 60vh; /* manje prostora na telefonu */
+        height: 60vh;
+        background-position: center top; /* header slika gore, centrirano levo-desno */
     }
 
     header .hero-text h1 {
@@ -195,12 +185,25 @@ footer {
         font-size: 16px;
     }
 
+    #o-meni {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    #o-meni img {
+        max-width: 250px;
+    }
+
     #o-meni .bio {
         text-align: center;
     }
+
+    #usluge .cards-wrapper {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
-
 
 </head>
 
@@ -270,6 +273,7 @@ I dok digitalni svet izgleda logično i hladno, ja verujem u tajne koje svaka st
 
 </body>
 </html>
+
 
 
 
