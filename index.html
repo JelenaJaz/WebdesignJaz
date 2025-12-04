@@ -50,12 +50,35 @@ header .hero-text p {
     text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     header {
-        padding: 5px 0; /* još manji vertikalni prostor na mobilnom */
+        width: calc(100% - 40px); /* horizontalne margine ostaju */
+        height: 55vh; /* optimalna visina */
+        margin: 20px auto; /* gore/dole margina */
+        border-radius: 12px;
+        padding: 0; /* uklonjen vertikalni padding */
+        overflow: hidden;
+    }
+
+    header .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+    }
+
+    header .hero-text h1 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    header .hero-text p {
+        font-size: 14px;
     }
 }
+
+
 
 /* NAV */
 nav {
@@ -306,6 +329,7 @@ I dok digitalni svet izgleda logično i hladno, ja verujem u tajne koje svaka st
 
 </body>
 </html>
+
 
 
 
