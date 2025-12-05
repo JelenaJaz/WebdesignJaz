@@ -18,32 +18,29 @@ body {
     background-color: #f8f4ec;
 }
 
-/* --- HERO SECTION --- */
 header {
     width: calc(100% - 40px);
     max-width: 1200px; 
-    height: 90vh;
+    height: 90vh; /* visina desktop */
     margin: 20px auto;
     border-radius: 20px;
     background-image: url('jazcode.jpg');
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /* slika pokriva celu sekciju */
+    background-position: center center; /* centrirana slika */
     position: relative;
-    padding-bottom: 50px;
     overflow: hidden;
-    border: 3px solid #d4b48f;
+    border: 3px solid #d4b48f; /* bronzani okvir */
 }
 
+/* Blagi topliji gradient overlay */
 header::before {
     content: "";
     position: absolute;
     top:0; left:0; right:0; bottom:0;
-    /* blagi topliji gradient preko slike */
     background: linear-gradient(to bottom, rgba(248,244,236,0.2), rgba(212,180,143,0.2));
     z-index:1;
     border-radius: 20px;
 }
-
 
 header .hero-text {
     position: absolute;
@@ -52,7 +49,7 @@ header .hero-text {
     transform: translate(-50%, -50%);
     color: #fff;
     text-align: center;
-    z-index:2;
+    z-index:2; /* iznad overlay-a */
 }
 
 header .hero-text h1 {
@@ -63,6 +60,26 @@ header .hero-text h1 {
 header .hero-text p {
     font-size: 20px;
 }
+
+/* MOBILE tweak */
+@media (max-width: 480px) {
+    header {
+        height: 65vh; /* malo viša sekcija da slika pokrije prostor */
+        border-radius: 12px;
+        padding: 10px 0;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    header .hero-text h1 {
+        font-size: 26px;
+    }
+
+    header .hero-text p {
+        font-size: 14px;
+    }
+}
+
 
 /* --- NAV --- */
 nav {
@@ -370,5 +387,6 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
+
 
 
