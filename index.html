@@ -19,27 +19,25 @@ body {
 }
 
 header {
-    width: calc(100% - 40px);
-    max-width: 1200px; 
-    height: 90vh; /* visina desktop */
-    margin: 20px auto;
-    border-radius: 20px;
+    width: 100%;          /* puni celu širinu ekrana */
+    height: 100vh;        /* zauzima celu visinu prozora */
+    margin: 0;            /* uklanja margine */
+    padding: 0;           /* uklanja padding */
+    border-radius: 0;     /* za full screen nema zaobljenja */
     background-image: url('jazcode.jpg');
-    background-size: cover; /* slika pokriva celu sekciju */
-    background-position: center center; /* centrirana slika */
+    background-size: cover;       /* slika popunjava ceo header */
+    background-position: center;  /* centrirana slika */
+    background-repeat: no-repeat;
     position: relative;
-    overflow: hidden;
-    border: 3px solid #d4b48f; /* bronzani okvir */
 }
 
-/* Blagi topliji gradient overlay */
+/* Overlay za bolju čitljivost teksta */
 header::before {
     content: "";
     position: absolute;
     top:0; left:0; right:0; bottom:0;
     background: linear-gradient(to bottom, rgba(248,244,236,0.2), rgba(212,180,143,0.2));
     z-index:1;
-    border-radius: 20px;
 }
 
 header .hero-text {
@@ -49,16 +47,22 @@ header .hero-text {
     transform: translate(-50%, -50%);
     color: #fff;
     text-align: center;
-    z-index:2; /* iznad overlay-a */
+    z-index:2;
 }
 
-header .hero-text h1 {
-    font-size: 48px;
-    margin: 0 0 20px;
-}
+/* MOBILE tweak */
+@media (max-width: 480px) {
+    header {
+        height: 70vh; /* prilagođena visina na mobilnom */
+    }
 
-header .hero-text p {
-    font-size: 20px;
+    header .hero-text h1 {
+        font-size: 26px;
+    }
+
+    header .hero-text p {
+        font-size: 14px;
+    }
 }
 
 /* MOBILE tweak */
@@ -387,6 +391,7 @@ window.addEventListener('scroll', () => {
 
 </body>
 </html>
+
 
 
 
