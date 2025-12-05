@@ -1,1 +1,372 @@
 
+
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio JAZ</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    color: #333;
+    background-color: #f8f4ec;
+}
+
+/* --- HERO SECTION --- */
+header {
+    width: calc(100% - 40px);
+    max-width: 1200px; 
+    height: 90vh;
+    margin: 20px auto;
+    border-radius: 20px;
+    background-image: url('jazcode.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-bottom: 50px;
+    overflow: hidden;
+    border: 3px solid #d4b48f;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    /* blagi topliji gradient preko slike */
+    background: linear-gradient(to bottom, rgba(248,244,236,0.2), rgba(212,180,143,0.2));
+    z-index:1;
+    border-radius: 20px;
+}
+
+
+header .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index:2;
+}
+
+header .hero-text h1 {
+    font-size: 48px;
+    margin: 0 0 20px;
+}
+
+header .hero-text p {
+    font-size: 20px;
+}
+
+/* --- NAV --- */
+nav {
+    text-align: center;
+    background: rgba(245,240,230,0.9);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #5c4033;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #7b5e57;
+}
+
+/* --- SECTION COMMON --- */
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color:#f5ede3;
+    border-radius: 20px;
+    border: 2px solid #d4b48f; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s, transform 0.6s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* --- O MENI --- */
+#o-meni {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+#o-meni img {
+    flex: 1 1 300px;
+    max-width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#o-meni .bio {
+    flex: 2 1 500px;
+}
+
+/* --- USLUGE KARTICE --- */
+#usluge .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.service-card {
+    background: #f5e9d6; 
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 280px;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.service-card:hover h3 {
+    color: #d4b48f;
+}
+
+.service-card p {
+    line-height: 1.5;
+}
+
+/* --- KONTAKT --- */
+#kontakt {
+    text-align: center;
+}
+
+#kontakt a {
+    color:#5c4033; 
+    text-decoration:none;
+}
+
+#kontakt a:hover {
+    color: #7b5e57;
+}
+
+#kontakt form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#kontakt input, #kontakt textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d4b48f;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+#kontakt button {
+    padding: 12px;
+    background-color: #d4b48f;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#kontakt button:hover {
+    background-color: #b08f63;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f5f0e6;
+    color: #5c4033;
+    font-size: 14px;
+    border-top: 2px solid #d4b48f;
+}
+
+/* --- RESPONSIVE --- */
+
+/* TABLET */
+@media (max-width: 1024px) {
+    header {
+        width: calc(100% - 30px);
+        height: 70vh;
+        border-radius: 15px;
+    }
+
+    header .hero-text h1 {
+        font-size: 38px;
+    }
+
+    header .hero-text p {
+        font-size: 18px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    header {
+        height: 50vh;
+        border-radius: 12px;
+        padding: 10px 0;
+    }
+
+    header .hero-text h1 {
+        font-size: 26px;
+    }
+
+    header .hero-text p {
+        font-size: 14px;
+    }
+
+    #o-meni {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #o-meni img {
+        margin: 0 auto;
+        max-width: 80%;
+    }
+
+    #o-meni .bio {
+        flex: 1 1 100%;
+    }
+
+    #usluge .cards-wrapper {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .service-card {
+        width: 90%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="hero-text">
+        <h1>JAZ - Web Designer</h1>
+        <p>TVOJ SAJT - TVOJA PRICA</p>
+    </div>
+</header>
+
+<nav>
+    <a href="#o-meni">O meni</a>
+    <a href="#usluge">Usluge</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
+
+<section id="o-meni">
+    <img src="jazlogo.jpg" alt="JAZ Profile">
+    <div class="bio">
+        <h2>O meni/About me</h2>
+        <p>Zdravo! Ja sam Jelena – kreatorka digitalnih svetova i graditelj brend identiteta koji ostavlja neizbrisiv trag. <br><br>
+Moj rad nije samo web dizajn; to je umetnost pričanja priče kroz piksele i boje, spoj estetike, funkcionalnosti i psihologije korisničkog iskustva. Verujem da svaki sajt nosi energiju svog kreatora i klijenta – i da je dizajn moćno oruđe koje oblikuje percepciju, izaziva emocije i inspiriše akciju.<br><br>
+Moj stil je spoj minimalizma, sofisticiranosti i psihološke dubine – sajtovi koje kreiram nisu samo lepi, već imaju snagu da privuku, zadrže i osvoje pažnju. Dobrodošli na moj portfolio – ovde počinje vaša priča, oblikovana snagom, estetikom i misterijom.</p>
+    </div>
+</section>
+
+<section id="usluge">
+    <h2>Usluge/Services</h2>
+    <div class="cards-wrapper">
+        <div class="service-card">
+            <h3>Web dizajn</h3>
+            <p>Linije koda nisu samo tehnika — one nose tvoj identitet.<br>Boje, slike i struktura postaju psihologija tvog brenda.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Online prodavnice</h3>
+            <p>Tvoja prodavnica, tvoj identitet.<br>Sistem koji radi za tebe, jednostavan za upravljanje i dizajniran da proda.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Portfolio sajtovi</h3>
+            <p>Portfolio sajt koji pretvara tvoju kreativnost u digitalni brend.<br>Jedinstveno, profesionalno, tvoje ime na mreži.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Logo dizajn</h3>
+            <p>Tvoja ideja, tvoj stil, tvoj logo.<br>Pretvaram kreativnost u vizuelni identitet koji pamti svet.</p>
+        </div>
+    </div>
+</section>
+
+<section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Email: <a href="mailto:jelenabogoeski23@gmail.com">jelenabogoeski23@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/webdesign_jaz" target="_blank">@webdesign_jaz</a></p>
+    <form action="mailto:jelenabogoeski23@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Ime" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Poruka" required></textarea>
+        <button type="submit">Pošalji</button>
+    </form>
+</section>
+
+<footer>
+    &copy; 2025 JAZ | Designed by Jelena Bogoeski | All rights reserved
+</footer>
+
+<script>
+// Fade-in effect for sections
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add('visible');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
