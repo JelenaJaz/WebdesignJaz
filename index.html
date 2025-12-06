@@ -33,28 +33,21 @@ body {
 header {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto 40px auto;  /* centriran i razmak od naslova i sekcija */
-    height: 90vh;
-    min-height: 480px;
+    margin: 0 auto 40px auto;
     padding: 0;
-    background-image: url('logo.jpg');
-    background-size: contain;           /* vidi se cela slika */
-    background-position: center top;    /* fokus na glavu */
-    background-repeat: no-repeat;
-    background-color: #f8f4ec;
-    border: 2px solid #d4b48f;         /* bakarni/zlatni okvir */
+    position: relative;
+    border: 2px solid #d4b48f;       /* bakarni/zlatni okvir */
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    position: relative;
     overflow: hidden;
 }
 
-/* Uklonjen overlay i hero-text */
-header::before {
-    display: none;
-}
-header .hero-text {
-    display: none;
+/* Omotač slike da se ne seče i ostane responsiv */
+header .hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px; /* unutrašnja ivica radi uklapanja sa header borderom */
 }
 
 /* --- NAV --- */
@@ -225,19 +218,11 @@ footer {
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
     header {
-        height: 80vh;
-        min-height: 400px;
+        width: 95%;
     }
 }
 
 @media (max-width: 480px) {
-    header {
-        height: 60vh;
-        min-height: 320px;
-        background-size: contain !important;
-        background-position: center top !important;
-    }
-
     .hero-title {
         font-size: 30px;
         margin-top: 20px;
@@ -273,7 +258,9 @@ footer {
 
 <h1 class="hero-title">TVOJ SAJT – TVOJA PRIČA</h1>
 
-<header></header>
+<header>
+    <img class="hero-image" src="logo.jpg" alt="Hero Logo">
+</header>
 
 <nav>
     <a href="#o-meni">O meni</a>
